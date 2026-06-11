@@ -3,13 +3,13 @@ import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth"
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBtiCT9zHkx28jGmggXLUpe5kuGoG5rNpw",
-  authDomain: "zohour-handball-2010-f59c4.firebaseapp.com",
-  projectId: "zohour-handball-2010-f59c4",
-  storageBucket: "zohour-handball-2010-f59c4.firebasestorage.app",
-  messagingSenderId: "733306244703",
-  appId: "1:733306244703:web:f1182437c062aa014695ea",
-  measurementId: "G-7PX0VWHGMD",
+  apiKey: "AIzaSyAlbDHAbjwtIw28LcyZ5BJq-v1os0Lt3PI",
+  authDomain: "elzhour-woman.firebaseapp.com",
+  projectId: "elzhour-woman",
+  storageBucket: "elzhour-woman.firebasestorage.app",
+  messagingSenderId: "302936528044",
+  appId: "1:302936528044:web:db4958e38690ce39e33b09",
+  measurementId: "G-G1WCB9K71G",
 };
 
 export const app: FirebaseApp = initializeApp(firebaseConfig);
