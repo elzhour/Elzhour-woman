@@ -1,0 +1,18 @@
+kind = "web"
+previewPath = "/"
+title = "مركز شباب الزهور - كرة يد بنات"
+version = "1.0.0"
+id = "artifacts/zohour-handball"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23176
+
+[services.development]
+run = "echo 'artifact moved to artifacts/zohour-handball'"
+
+[services.env]
+PORT = "23176"
+BASE_PATH = "/"
