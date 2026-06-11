@@ -24,8 +24,8 @@ const setupSchema = z.object({
   month: z.string().regex(/^(0?[1-9]|1[012])$/, "1-12"),
   year: z.string().refine((val) => {
     const y = parseInt(val);
-    return y >= 2008 && y <= 2013;
-  }, "2008 - 2013"),
+    return y >= 1999 && y <= 2016;
+  }, "1999 - 2016"),
 });
 
 export default function PlayerSetup() {

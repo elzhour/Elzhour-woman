@@ -1,5 +1,5 @@
 [build]
-  command   = "pnpm install --frozen-lockfile && pnpm --filter @workspace/zohour-handball run build"
+  command   = "pnpm install --no-frozen-lockfile && pnpm --filter @workspace/zohour-handball run build"
   publish   = "artifacts/zohour-handball/dist/public"
 
 [build.environment]
