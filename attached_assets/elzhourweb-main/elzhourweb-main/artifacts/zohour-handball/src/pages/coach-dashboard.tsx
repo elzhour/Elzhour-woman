@@ -163,7 +163,7 @@ export default function CoachDashboard() {
   const toggleEval = (player: any) => {
     const isPresent = attendance[player.id] === "present";
     if (!isPresent) {
-      if (attendance[player.id] === "absent") toast.error("اللاعب غائب");
+      if (attendance[player.id] === "absent") toast.error("اللاعبة غائبة");
       else toast.warning("حدد الحضور أولاً");
       return;
     }
@@ -328,11 +328,11 @@ export default function CoachDashboard() {
                       <div className="flex gap-1 shrink-0">
                         <button onClick={() => markAttendance(player, "present")} disabled={isLoading}
                           className={`flex items-center gap-1 px-2 py-1.5 rounded-xl text-[11px] font-bold transition-all ${attStatus === "present" ? "bg-green-500 text-white shadow-sm" : "bg-muted text-muted-foreground hover:bg-green-100 dark:hover:bg-green-900/20 hover:text-green-700"}`}>
-                          <Check className="w-3 h-3" />حاضر
+                          <Check className="w-3 h-3" />حاضرة
                         </button>
                         <button onClick={() => markAttendance(player, "absent")} disabled={isLoading}
                           className={`flex items-center gap-1 px-2 py-1.5 rounded-xl text-[11px] font-bold transition-all ${attStatus === "absent" ? "bg-red-500 text-white shadow-sm" : "bg-muted text-muted-foreground hover:bg-red-100 dark:hover:bg-red-900/20 hover:text-red-700"}`}>
-                          <X className="w-3 h-3" />غائب
+                          <X className="w-3 h-3" />غائبة
                         </button>
                       </div>
                     </div>
@@ -415,8 +415,8 @@ export default function CoachDashboard() {
             <div className="grid grid-cols-3 gap-2 mb-2">
               {[
                 { label: "إجمالي", count: players.length, cls: "text-foreground bg-muted" },
-                { label: "حاضر", count: Object.values(attendance).filter((s) => s === "present").length, cls: "text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/20" },
-                { label: "غائب", count: Object.values(attendance).filter((s) => s === "absent").length, cls: "text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900/20" },
+                { label: "حاضرات", count: Object.values(attendance).filter((s) => s === "present").length, cls: "text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/20" },
+                { label: "غائبات", count: Object.values(attendance).filter((s) => s === "absent").length, cls: "text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900/20" },
               ].map(({ label, count, cls }) => (
                 <div key={label} className={`rounded-xl p-2.5 text-center ${cls}`}>
                   <div className="font-extrabold text-lg">{count}</div>
@@ -432,12 +432,12 @@ export default function CoachDashboard() {
                   <UserAvatar photoURL={player.photoURL} name={player.firstName} size={40} />
                   <div className="flex-1 min-w-0">
                     <div className="font-extrabold text-sm truncate">{player.firstName} {player.fatherName}</div>
-                    {status === "present" && <div className="text-[11px] font-bold text-green-600 dark:text-green-400 mt-0.5">✓ حاضر</div>}
-                    {status === "absent" && <div className="text-[11px] font-bold text-red-600 dark:text-red-400 mt-0.5">✗ غائب</div>}
-                    {!status && <div className="text-[11px] text-muted-foreground mt-0.5">لم يُسجَّل</div>}
+                    {status === "present" && <div className="text-[11px] font-bold text-green-600 dark:text-green-400 mt-0.5">✓ حاضرة</div>}
+                    {status === "absent" && <div className="text-[11px] font-bold text-red-600 dark:text-red-400 mt-0.5">✗ غائبة</div>}
+                    {!status && <div className="text-[11px] text-muted-foreground mt-0.5">لم تُسجَّل</div>}
                   </div>
                   <div className={`shrink-0 text-[11px] font-extrabold px-2.5 py-1 rounded-full ${status === "present" ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : status === "absent" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" : "bg-muted text-muted-foreground"}`}>
-                    {status === "present" ? "حاضر" : status === "absent" ? "غائب" : "—"}
+                    {status === "present" ? "حاضرة" : status === "absent" ? "غائبة" : "—"}
                   </div>
                 </div>
               );
@@ -467,9 +467,9 @@ export default function CoachDashboard() {
             </div>
             <div>
               <h3 className="text-sm font-extrabold mb-2.5 px-1 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-bold">{players.length}</span>اللاعبون
+                <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-bold">{players.length}</span>اللاعبات
               </h3>
-              {players.length === 0 && <div className="text-center text-muted-foreground text-xs py-8 bg-card rounded-2xl border border-border">لا يوجد لاعبون</div>}
+              {players.length === 0 && <div className="text-center text-muted-foreground text-xs py-8 bg-card rounded-2xl border border-border">لا يوجد لاعبات</div>}
               <div className="space-y-2">
                 {players.map((player, idx) => (
                   <div key={player.id} className="bg-card border border-border rounded-2xl p-3.5 flex items-center gap-3">
@@ -535,7 +535,7 @@ export default function CoachDashboard() {
                   </div>
                 </>
               ) : (
-                <div className="text-center text-muted-foreground text-sm py-10">لا توجد تقييمات لهذا اللاعب</div>
+                <div className="text-center text-muted-foreground text-sm py-10">لا توجد تقييمات لهذه اللاعبة</div>
               )}
             </div>
             <div className="p-4 border-t border-border bg-muted/20 text-left">
@@ -549,7 +549,7 @@ export default function CoachDashboard() {
         active={activeTab}
         onChange={(id) => setActiveTab(id as ActiveTab)}
         tabs={[
-          { id: "players", label: "اللاعبون", icon: Users },
+          { id: "players", label: "اللاعبات", icon: Users },
           { id: "evaluations", label: "التقييم", icon: ClipboardList },
           { id: "attendance", label: "الحضور", icon: CalendarCheck },
           { id: "list", label: "القائمة", icon: List },

@@ -48,35 +48,31 @@
 
 /* ==============================
    ZOHOUR HANDBALL PALETTE
-   Light: clean white + deep navy  (+ soft pink warmth)
-   Dark:  rich midnight + bright blue accent (+ soft pink warmth)
+   الألوان الأصلية navy/blue + حواف وردية فقط
    ============================== */
 
 /* LIGHT MODE */
 :root {
-  /* Background: الأصلي 220 30% 97% — أضفنا لمسة وردية خفيفة جداً */
-  --background: 300 12% 97%;
+  --background: 220 30% 97%;
   --foreground: 220 60% 10%;
-  /* Border: الأصلي 220 20% 88% — مع خفقة وردية */
-  --border: 300 10% 87%;
+  /* حواف وردية ناعمة */
+  --border: 325 45% 74%;
 
   --card: 0 0% 100%;
   --card-foreground: 220 60% 10%;
-  --card-border: 300 8% 90%;
+  --card-border: 325 40% 78%;
 
   --popover: 0 0% 100%;
   --popover-foreground: 220 60% 10%;
-  --popover-border: 300 8% 90%;
+  --popover-border: 325 40% 78%;
 
-  /* Primary: نفس النيفي الأصلي */
   --primary: 220 70% 20%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 220 35% 30%;
   --secondary-foreground: 0 0% 100%;
 
-  /* Muted: الأصلي 220 20% 93% — مع لمسة وردية */
-  --muted: 300 8% 93%;
+  --muted: 220 20% 93%;
   --muted-foreground: 220 15% 45%;
 
   --accent: 215 75% 35%;
@@ -85,7 +81,7 @@
   --destructive: 4 75% 52%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 300 10% 87%;
+  --input: 325 30% 82%;
   --ring: 220 70% 20%;
 
   --radius: 14px;
@@ -96,28 +92,26 @@
 
 /* DARK MODE */
 .dark {
-  /* Background: الأصلي 222 45% 7% — مع خفقة وردية خفية */
-  --background: 270 20% 7%;
+  --background: 222 45% 7%;
   --foreground: 215 30% 96%;
-  /* Border: الأصلي 220 30% 16% */
-  --border: 270 15% 16%;
+  /* حواف وردية هادئة في الداكن */
+  --border: 325 30% 30%;
 
-  --card: 270 15% 10%;
+  --card: 222 30% 10%;
   --card-foreground: 215 30% 96%;
-  --card-border: 270 15% 17%;
+  --card-border: 325 25% 24%;
 
-  --popover: 270 15% 10%;
+  --popover: 222 30% 10%;
   --popover-foreground: 215 30% 96%;
-  --popover-border: 270 15% 17%;
+  --popover-border: 325 25% 24%;
 
-  /* Primary: نفس الأزرق الأصلي */
   --primary: 210 90% 62%;
   --primary-foreground: 222 45% 7%;
 
   --secondary: 220 30% 20%;
   --secondary-foreground: 215 30% 96%;
 
-  --muted: 270 12% 14%;
+  --muted: 220 20% 14%;
   --muted-foreground: 220 15% 62%;
 
   --accent: 210 85% 65%;
@@ -126,7 +120,7 @@
   --destructive: 4 70% 48%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 270 15% 16%;
+  --input: 325 20% 22%;
   --ring: 210 90% 62%;
 
   --success: 142 60% 45%;

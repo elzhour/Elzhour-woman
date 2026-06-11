@@ -108,7 +108,7 @@ export default function PlayerDashboard() {
           size={56} ring editable onUpload={handlePhotoChange}
         />
         <div className="flex-1 min-w-0">
-          <h2 className="font-extrabold text-base truncate">{playerData?.fullName || "لاعب"}</h2>
+          <h2 className="font-extrabold text-base truncate">{playerData?.fullName || "لاعبة"}</h2>
           <p className="text-xs text-muted-foreground">اضغطي على الصورة لتغييرها</p>
         </div>
       </div>
@@ -184,8 +184,8 @@ export default function PlayerDashboard() {
             <div className="grid grid-cols-3 gap-2">
               {[
                 { label: "إجمالي", count: players.length, cls: "text-foreground bg-muted" },
-                { label: "حاضر", count: presentCount, cls: "text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/20" },
-                { label: "غائب", count: absentCount, cls: "text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900/20" },
+                { label: "حاضرات", count: presentCount, cls: "text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/20" },
+                { label: "غائبات", count: absentCount, cls: "text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900/20" },
               ].map(({ label, count, cls }) => (
                 <div key={label} className={`rounded-xl p-2.5 text-center ${cls}`}>
                   <div className="font-extrabold text-lg">{count}</div>
@@ -203,12 +203,12 @@ export default function PlayerDashboard() {
                   <UserAvatar photoURL={player.photoURL} name={player.firstName} size={40} />
                   <div className="flex-1 min-w-0">
                     <div className="font-extrabold text-sm truncate">{player.firstName} {player.fatherName}</div>
-                    {status === "present" && <div className="text-[11px] font-bold text-green-600 dark:text-green-400 mt-0.5">✓ حاضر</div>}
-                    {status === "absent" && <div className="text-[11px] font-bold text-red-600 dark:text-red-400 mt-0.5">✗ غائب</div>}
-                    {!status && <div className="text-[11px] text-muted-foreground mt-0.5">لم يُسجَّل</div>}
+                    {status === "present" && <div className="text-[11px] font-bold text-green-600 dark:text-green-400 mt-0.5">✓ حاضرة</div>}
+                    {status === "absent" && <div className="text-[11px] font-bold text-red-600 dark:text-red-400 mt-0.5">✗ غائبة</div>}
+                    {!status && <div className="text-[11px] text-muted-foreground mt-0.5">لم تُسجَّل</div>}
                   </div>
                   <div className={`shrink-0 text-[11px] font-extrabold px-2.5 py-1 rounded-full ${status === "present" ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : status === "absent" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" : "bg-muted text-muted-foreground"}`}>
-                    {status === "present" ? "حاضر" : status === "absent" ? "غائب" : "—"}
+                    {status === "present" ? "حاضرة" : status === "absent" ? "غائبة" : "—"}
                   </div>
                 </div>
               );
